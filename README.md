@@ -1,4 +1,4 @@
-# flourence-sample
+# flourence-sample-readme
 
 login credentials:
 uname:client
