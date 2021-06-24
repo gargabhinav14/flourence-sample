@@ -41,7 +41,8 @@ public class SampleService {
                         repository.findByItemCode(paging, tag.getItemCode())
                                 .forEach(item -> docs.add(item));
                     });
-            return docs;
+            return new ArrayList<SampleDocument>(docs.subList(page * size, new Integer(page * size + (size = page == 0 ? size : 0) <= docs.size() ? page * size + (size = page == 0 ? size : 0) : docs.size())));
+//            return docs;
         } else {
             return repository.findAll(paging)
                     .stream()
